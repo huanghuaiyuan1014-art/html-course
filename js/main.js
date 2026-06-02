@@ -95,10 +95,11 @@ function initAudioOverlay() {
     if (overlay.classList.contains('fading')) return;
     overlay.classList.add('fading');
     setTimeout(() => overlay.classList.add('hidden'), 500);
+    // 立即保存标志（同步），防止用户快速切页导致标志丢失
+    sessionStorage.setItem('bgm_user_enabled', 'true');
     const bgm = document.getElementById('bgmAudio');
-    if (bgm && bgm.paused) {
+    if (bgm) {
       bgm.play().then(() => {
-        sessionStorage.setItem('bgm_user_enabled', 'true');
         sessionStorage.setItem('bgm_playing', 'true');
         const btn = document.getElementById('bgmToggle');
         if (btn) { btn.textContent = '🔊'; btn.style.color = 'var(--gold)'; }
