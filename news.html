@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新闻动态 — 新畑算力科技</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg class="logo-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="lg-gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00f0ff"/><stop offset="50%" style="stop-color:#ffd700"/><stop offset="100%" style="stop-color:#00f0ff"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" fill="none" stroke="url(#lg-gold)" stroke-width="1.5" filter="url(#glow)"/>
+        <polygon points="24,9 38,16.5 38,31.5 24,39 10,31.5 10,16.5" fill="none" stroke="rgba(0,240,255,0.3)" stroke-width="0.8"/>
+        <line x1="14" y1="14" x2="24" y2="24" stroke="rgba(255,215,0,0.5)" stroke-width="0.8"/><line x1="34" y1="14" x2="24" y2="24" stroke="rgba(255,215,0,0.5)" stroke-width="0.8"/>
+        <line x1="14" y1="34" x2="24" y2="24" stroke="rgba(0,240,255,0.5)" stroke-width="0.8"/><line x1="34" y1="34" x2="24" y2="24" stroke="rgba(0,240,255,0.5)" stroke-width="0.8"/>
+        <text x="24" y="30" text-anchor="middle" font-size="18" font-family="serif" fill="#ffd700" filter="url(#glow)">畑</text>
+        <circle cx="24" cy="4" r="2.5" fill="#00f0ff" filter="url(#glow)"/><circle cx="42" cy="14" r="2" fill="#ffd700"/><circle cx="42" cy="34" r="2" fill="#ffd700"/><circle cx="24" cy="44" r="2.5" fill="#00f0ff" filter="url(#glow)"/><circle cx="6" cy="34" r="2" fill="#ffd700"/><circle cx="6" cy="14" r="2" fill="#ffd700"/>
+      </svg>
+      <span class="logo-text">新畑算力</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li><li><a href="about.html">关于我们</a></li><li><a href="services.html">服务项目</a></li><li><a href="news.html" class="active">新闻动态</a></li><li><a href="cases.html">客户案例</a></li><li><a href="contact.html">联系我们</a></li>
+    </ul>
+    <button class="hamburger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="about-hero"><h1>新闻动态</h1><p>了解新畑算力的最新资讯与行业洞察</p></div>
+<div class="breadcrumb"><a href="index.html">首页</a> &raquo; 新闻动态</div>
+
+<section class="section">
+  <div class="section-container">
+    <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap;" class="reveal">
+      <button class="btn-sm" style="background:var(--cyan);color:var(--bg);border:1px solid var(--cyan);cursor:pointer;font-family:var(--font-display);padding:8px 20px;border-radius:4px;" onclick="filterNews('all')">ALL</button>
+      <button class="btn-sm" style="background:transparent;color:var(--cyan);border:1px solid var(--cyan-dim);cursor:pointer;font-family:var(--font-display);padding:8px 20px;border-radius:4px;" onclick="filterNews('company')">公司动态</button>
+      <button class="btn-sm" style="background:transparent;color:var(--cyan);border:1px solid var(--cyan-dim);cursor:pointer;font-family:var(--font-display);padding:8px 20px;border-radius:4px;" onclick="filterNews('industry')">行业资讯</button>
+      <button class="btn-sm" style="background:transparent;color:var(--cyan);border:1px solid var(--cyan-dim);cursor:pointer;font-family:var(--font-display);padding:8px 20px;border-radius:4px;" onclick="filterNews('tech')">技术分享</button>
+    </div>
+
+    <div class="news-grid" id="newsGrid">
+      <a href="news-detail.html?id=1" class="card news-card reveal" data-category="company">
+        <div class="news-img">⚡</div><div class="news-body"><div class="news-date">2026-05-28 · 公司动态</div><h3>新畑算力荣获2026年度最佳算力服务商</h3></div>
+      </a>
+      <a href="news-detail.html?id=2" class="card news-card reveal" data-category="company">
+        <div class="news-img">🎯</div><div class="news-body"><div class="news-date">2026-05-20 · 公司动态</div><h3>与南宁多所高校达成算力产学研合作协议</h3></div>
+      </a>
+      <a href="news-detail.html?id=3" class="card news-card reveal" data-category="tech">
+        <div class="news-img">🚀</div><div class="news-body"><div class="news-date">2026-05-15 · 技术分享</div><h3>新一代AI算力平台「新畑智算」正式上线</h3></div>
+      </a>
+      <a href="news-detail.html?id=4" class="card news-card reveal" data-category="industry">
+        <div class="news-img">🌐</div><div class="news-body"><div class="news-date">2026-05-10 · 行业资讯</div><h3>2026中国算力产业发展趋势报告发布</h3></div>
+      </a>
+      <a href="news-detail.html?id=5" class="card news-card reveal" data-category="tech">
+        <div class="news-img">🔧</div><div class="news-body"><div class="news-date">2026-04-28 · 技术分享</div><h3>云原生算力架构：从单体到分布式演进之路</h3></div>
+      </a>
+      <a href="news-detail.html?id=6" class="card news-card reveal" data-category="company">
+        <div class="news-img">🎉</div><div class="news-body"><div class="news-date">2026-04-15 · 公司动态</div><h3>新畑算力八周年庆典暨新品发布会圆满举行</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><h4>◆ 新畑算力科技</h4><p>算力驱动未来<br>XINTIAN POWER TECH</p><div class="social-links"><a href="#" target="_blank">in</a><a href="#" target="_blank">⌂</a><a href="#">微</a></div></div>
+    <div><h4>快速链接</h4><p><a href="about.html">关于我们</a></p><p><a href="services.html">服务项目</a></p><p><a href="news.html">新闻动态</a></p><p><a href="cases.html">客户案例</a></p></div>
+    <div><h4>算力服务</h4><p><a href="service-detail.html?service=consulting">战略咨询</a></p><p><a href="service-detail.html?service=software">软件开发</a></p><p><a href="service-detail.html?service=cloud">云计算</a></p><p><a href="service-detail.html?service=data">数据分析</a></p></div>
+    <div><h4>联系我们</h4><p>📍 南宁市</p><p>📧 power@xintianpower.cn</p><p>🕐 7×24 算力在线</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 新畑算力科技 | 南宁理工学院 信息与电气工程学院 通信工程 | 黄新田 23090415 | 结课作业</p></div>
+</footer>
+
+<audio id="bgmAudio" loop preload="auto" style="display:none;"><source src="images/bgm.mp3" type="audio/mpeg"></audio>
+<div class="toolbar"><button id="bgmToggle" title="背景音乐" style="font-size:0.9rem;">🔇</button>
+  <button id="backToTop">↑</button><button id="chatBtn">◈</button></div>
+<div class="chat-popup" id="chatPopup"><div class="chat-header"><span>新畑算力 · 在线客服</span><button id="chatClose" style="background:none;border:none;color:var(--cyan);cursor:pointer;float:right;font-size:1.2rem;">✕</button></div><div class="chat-body"><p>◈ 新畑算力科技，请问有什么可以帮您？</p></div><div class="chat-input"><input type="text" id="chatInput" placeholder="输入..."><button id="chatSend">发送</button></div></div>
+
+<script src="js/main.js"></script>
+<script>
+function filterNews(cat) {
+  document.querySelectorAll('#newsGrid .news-card').forEach(c => { c.style.display = (cat==='all'||c.dataset.category===cat) ? '' : 'none'; });
+  document.querySelectorAll('.btn-sm').forEach((b,i) => { b.style.background = i===0 && cat==='all' || [...b.parentElement.children].indexOf(b) === [...b.parentElement.children].findIndex(x=>x.textContent.trim().toLowerCase().includes(cat)) ? 'var(--cyan)' : 'transparent'; b.style.color = 'var(--cyan)'; });
+}
+</script>
+</body>
+</html>

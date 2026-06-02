@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新闻详情 — 新畑算力科技</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg class="logo-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="lg-gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00f0ff"/><stop offset="50%" style="stop-color:#ffd700"/><stop offset="100%" style="stop-color:#00f0ff"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" fill="none" stroke="url(#lg-gold)" stroke-width="1.5" filter="url(#glow)"/>
+        <polygon points="24,9 38,16.5 38,31.5 24,39 10,31.5 10,16.5" fill="none" stroke="rgba(0,240,255,0.3)" stroke-width="0.8"/>
+        <line x1="14" y1="14" x2="24" y2="24" stroke="rgba(255,215,0,0.5)" stroke-width="0.8"/><line x1="34" y1="14" x2="24" y2="24" stroke="rgba(255,215,0,0.5)" stroke-width="0.8"/>
+        <line x1="14" y1="34" x2="24" y2="24" stroke="rgba(0,240,255,0.5)" stroke-width="0.8"/><line x1="34" y1="34" x2="24" y2="24" stroke="rgba(0,240,255,0.5)" stroke-width="0.8"/>
+        <text x="24" y="30" text-anchor="middle" font-size="18" font-family="serif" fill="#ffd700" filter="url(#glow)">畑</text>
+        <circle cx="24" cy="4" r="2.5" fill="#00f0ff" filter="url(#glow)"/><circle cx="42" cy="14" r="2" fill="#ffd700"/><circle cx="42" cy="34" r="2" fill="#ffd700"/><circle cx="24" cy="44" r="2.5" fill="#00f0ff" filter="url(#glow)"/><circle cx="6" cy="34" r="2" fill="#ffd700"/><circle cx="6" cy="14" r="2" fill="#ffd700"/>
+      </svg>
+      <span class="logo-text">新畑算力</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li><li><a href="about.html">关于我们</a></li><li><a href="services.html">服务项目</a></li><li><a href="news.html">新闻动态</a></li><li><a href="cases.html">客户案例</a></li><li><a href="contact.html">联系我们</a></li>
+    </ul>
+    <button class="hamburger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="index.html">首页</a> &raquo; <a href="news.html">新闻动态</a> &raquo; <span id="breadcrumbTitle">文章详情</span></div>
+
+<section class="section">
+  <div class="article-container reveal" id="articleContent"></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><h4>◆ 新畑算力科技</h4><p>算力驱动未来<br>XINTIAN POWER TECH</p><div class="social-links"><a href="#" target="_blank">in</a><a href="#" target="_blank">⌂</a><a href="#">微</a></div></div>
+    <div><h4>快速链接</h4><p><a href="about.html">关于我们</a></p><p><a href="services.html">服务项目</a></p><p><a href="news.html">新闻动态</a></p><p><a href="cases.html">客户案例</a></p></div>
+    <div><h4>算力服务</h4><p><a href="service-detail.html?service=consulting">战略咨询</a></p><p><a href="service-detail.html?service=software">软件开发</a></p><p><a href="service-detail.html?service=cloud">云计算</a></p><p><a href="service-detail.html?service=data">数据分析</a></p></div>
+    <div><h4>联系我们</h4><p>📍 南宁市</p><p>📧 power@xintianpower.cn</p><p>🕐 7×24 算力在线</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 新畑算力科技 | 南宁理工学院 信息与电气工程学院 通信工程 | 黄新田 23090415 | 结课作业</p></div>
+</footer>
+
+<audio id="bgmAudio" loop preload="auto" style="display:none;"><source src="images/bgm.mp3" type="audio/mpeg"></audio>
+<div class="toolbar"><button id="bgmToggle" title="背景音乐" style="font-size:0.9rem;">🔇</button>
+  <button id="backToTop">↑</button><button id="chatBtn">◈</button></div>
+<div class="chat-popup" id="chatPopup"><div class="chat-header"><span>新畑算力 · 在线客服</span><button id="chatClose" style="background:none;border:none;color:var(--cyan);cursor:pointer;float:right;font-size:1.2rem;">✕</button></div><div class="chat-body"><p>◈ 新畑算力科技，请问有什么可以帮您？</p></div><div class="chat-input"><input type="text" id="chatInput" placeholder="输入..."><button id="chatSend">发送</button></div></div>
+
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id')) || 1;
+
+  const articles = {
+    1: { title: '新畑算力荣获2026年度最佳算力服务商', date: '2026-05-28', category: '公司动态',
+      content: `<p>在刚刚结束的<strong>2026年中国数字经济大会</strong>上，新畑算力科技凭借卓越的算力技术实力和优质的服务能力，荣获<strong>"2026年度最佳算力服务商"</strong>称号。</p>
+        <div class="article-img">⚡</div>
+        <h2>算力权威认可，实力见证</h2><p>中国数字经济大会是国内数字经济领域最具影响力的行业盛会。评审团由行业专家和学术权威组成，评选涵盖算力基础设施、云计算、大数据、AI等多个赛道。</p>
+        <p>新畑算力本次获奖，是行业对我们八年深耕企业算力服务的最好肯定。从创业团队到如今<strong>50余名算力工程师</strong>，我们始终坚持"算力驱动业务增长"的核心理念。</p>
+        <h2>持续创新</h2><p>• 推出新一代<strong>AI算力平台「新畑智算」V3.0</strong>，推理效率提升300%<br>• 完成<strong>分布式算力架构</strong>全面升级，可用性达99.99%<br>• 与多所高校建立<strong>算力产学研合作</strong></p>
+        <div class="video-embed"><video controls style="width:100%;height:100%;object-fit:contain;background:#000;" poster="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect fill='%230a0a12' width='800' height='450'/><text fill='%2300f0ff' x='400' y='225' text-anchor='middle' font-size='20' font-family='sans-serif'>▶ 算力产品宣传片</text></svg>"><source src="../动漫剪辑视频素材/游戏CG素材" type="video/mp4">您的浏览器不支持视频播放</video></div>
+        <p style="text-align:center;font-size:0.85rem;color:var(--text-light);">▲ 新畑算力产品宣传片</p>`
+    },
+    2: { title: '与南宁多所高校达成算力产学研合作协议', date: '2026-05-20', category: '公司动态',
+      content: `<p>近日，新畑算力科技与<strong>南宁理工学院</strong>等三所高校签署算力产学研合作协议。</p><div class="article-img">🎯</div>
+        <h2>算力校企合作</h2><p>根据协议，新畑算力将为合作高校提供GPU算力资源和实习岗位，资深工程师担任企业导师。高校将为企业提供算力技术研发支持。</p>
+        <h2>算力创新联合实验室</h2><p>双方将共建<strong>"算力创新联合实验室"</strong>，聚焦分布式算力调度、AI推理加速、边缘计算等前沿领域。</p>`
+    },
+    3: { title: '新一代AI算力平台「新畑智算」正式上线', date: '2026-05-15', category: '技术分享',
+      content: `<p>经过两年研发，新畑算力正式发布<strong>AI算力平台「新畑智算」V3.0</strong>。</p><div class="article-img">🚀</div>
+        <h2>核心亮点</h2><p>• <strong>AI驱动</strong>：内置大语言模型推理引擎<br>• <strong>实时分析</strong>：流式数据处理，毫秒级响应<br>• <strong>弹性调度</strong>：GPU算力池自动扩缩容<br>• <strong>安全合规</strong>：数据加密存储，支持私有化部署</p>
+        <h2>性能突破</h2><p>V3.0数据处理效率提升<strong>300%</strong>，已在多家客户完成试点，平均帮助提升数据分析效率<strong>5-8倍</strong>。</p>
+        <div class="video-embed"><video controls style="width:100%;height:100%;object-fit:contain;background:#000;" poster="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect fill='%230a0a12' width='800' height='450'/><text fill='%23ff006e' x='400' y='225' text-anchor='middle' font-size='20' font-family='sans-serif'>▶ AI算力平台演示</text></svg>"><source src="../动漫剪辑视频素材/电影素材" type="video/mp4">您的浏览器不支持视频播放</video></div>`
+    },
+    4: { title: '2026中国算力产业发展趋势报告发布', date: '2026-05-10', category: '行业资讯',
+      content: `<p>权威机构发布<strong>《2026中国算力产业发展趋势报告》</strong>，超<strong>76%</strong>中国企业已将算力基础设施列为核心战略。</p><div class="article-img">🌐</div>
+        <h2>算力行业趋势</h2><p>报告显示，制造业、金融业和医疗健康是算力需求最活跃的三大行业。中小企业算力需求显著增长，从"想用算力"进入"在用算力"阶段。</p>`
+    },
+    5: { title: '云原生算力架构：从单体到分布式演进之路', date: '2026-04-28', category: '技术分享',
+      content: `<p>分享新畑算力技术团队在分布式算力架构演进中的实践经验。</p><div class="article-img">🔧</div>
+        <h2>为什么选择云原生算力</h2><p>传统单体架构在算力扩展性、调度效率、故障隔离等方面逐渐暴露局限。云原生算力通过容器化、微服务、弹性调度等技术组合解决这些问题。</p>
+        <h2>实践要点</h2><p>• <strong>渐进式迁移</strong>：Strangler Fig模式，避免一次性重构<br>• <strong>算力边界</strong>：基于业务领域(DDD)合理划分算力单元<br>• <strong>可观测性</strong>：完善的算力监控、日志和链路追踪体系</p>`
+    },
+    6: { title: '新畑算力八周年庆典暨新品发布会圆满举行', date: '2026-04-15', category: '公司动态',
+      content: `<p>八载同行，算力为伴。新畑算力在南宁总部举行成立八周年庆典。</p><div class="article-img">🎉</div>
+        <h2>回顾历程</h2><p>自2018年创立，从创业小团队到50+算力工程师、服务200+企业。每一步都离不开客户的信任和团队的努力。</p>
+        <h2>新品发布</h2><p>发布了<strong>「新畑智算」AI算力平台V3.0</strong>和<strong>「新畑安盾」算力安全防护系统</strong>两款产品。</p>
+        <div class="video-embed"><video controls style="width:100%;height:100%;object-fit:contain;background:#000;" poster="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect fill='%230a0a12' width='800' height='450'/><text fill='%23ffd700' x='400' y='225' text-anchor='middle' font-size='20' font-family='sans-serif'>▶ 八周年庆典回顾</text></svg>"><source src="../动漫剪辑视频素材/动漫素材合集" type="video/mp4">您的浏览器不支持视频播放</video></div>`
+    }
+  };
+
+  const article = articles[id] || articles[1];
+  document.getElementById('breadcrumbTitle').textContent = article.title;
+  document.title = article.title + ' — 新畑算力科技';
+  document.getElementById('articleContent').innerHTML = `
+    <div class="article-header"><h1>${article.title}</h1><p class="article-meta">${article.date} · ${article.category}</p></div>
+    <div class="article-content">${article.content}</div>
+    <div class="article-nav">
+      <span>${id>1?`<a href="news-detail.html?id=${id-1}">← 上一篇</a>`:''}</span>
+      <a href="news.html">← 返回列表</a>
+      <span>${id<6?`<a href="news-detail.html?id=${id+1}">下一篇 →</a>`:''}</span>
+    </div>`;
+});
+</script>
+</body>
+</html>

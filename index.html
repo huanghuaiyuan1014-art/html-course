@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新畑算力科技 — 算力驱动未来</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg class="logo-svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lg-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#00f0ff"/>
+            <stop offset="50%" style="stop-color:#ffd700"/>
+            <stop offset="100%" style="stop-color:#00f0ff"/>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- 六边形外框 -->
+        <polygon points="24,4 42,14 42,34 24,44 6,34 6,14" fill="none" stroke="url(#lg-gold)" stroke-width="1.5" filter="url(#glow)"/>
+        <!-- 内六边形 -->
+        <polygon points="24,9 38,16.5 38,31.5 24,39 10,31.5 10,16.5" fill="none" stroke="rgba(0,240,255,0.3)" stroke-width="0.8"/>
+        <!-- 电路线 -->
+        <line x1="14" y1="14" x2="24" y2="24" stroke="rgba(255,215,0,0.5)" stroke-width="0.8"/>
+        <line x1="34" y1="14" x2="24" y2="24" stroke="rgba(255,215,0,0.5)" stroke-width="0.8"/>
+        <line x1="14" y1="34" x2="24" y2="24" stroke="rgba(0,240,255,0.5)" stroke-width="0.8"/>
+        <line x1="34" y1="34" x2="24" y2="24" stroke="rgba(0,240,255,0.5)" stroke-width="0.8"/>
+        <!-- 中心文字 -->
+        <text x="24" y="30" text-anchor="middle" font-size="18" font-family="serif" fill="#ffd700" filter="url(#glow)">畑</text>
+        <!-- 角部节点 -->
+        <circle cx="24" cy="4" r="2.5" fill="#00f0ff" filter="url(#glow)"/>
+        <circle cx="42" cy="14" r="2" fill="#ffd700"/>
+        <circle cx="42" cy="34" r="2" fill="#ffd700"/>
+        <circle cx="24" cy="44" r="2.5" fill="#00f0ff" filter="url(#glow)"/>
+        <circle cx="6" cy="34" r="2" fill="#ffd700"/>
+        <circle cx="6" cy="14" r="2" fill="#ffd700"/>
+      </svg>
+      <span class="logo-text">新畑算力</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">首页</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="services.html">服务项目</a></li>
+      <li><a href="news.html">新闻动态</a></li>
+      <li><a href="cases.html">客户案例</a></li>
+      <li><a href="contact.html">联系我们</a></li>
+    </ul>
+    <button class="hamburger" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-slide active">
+    <div class="hero-content">
+      <p class="chinese-seal">算 力 驱 动 未 来</p>
+      <h1>新畑算力科技</h1>
+      <p>赛博时代的算力引擎 · 赋能企业数字化腾飞</p>
+      <a href="services.html" class="btn btn-primary">◆ 探索算力</a>
+      <a href="contact.html" class="btn btn-outline" style="margin-left:12px;">联系我们</a>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <div class="hero-content">
+      <p class="chinese-seal">云 原 生 架 构</p>
+      <h1>算力即服务</h1>
+      <p>弹性算力调度 · 云原生架构 · 按需伸缩</p>
+      <a href="services.html" class="btn btn-primary">◆ 了解更多</a>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <div class="hero-content">
+      <p class="chinese-seal">A I 赋 能 万 物</p>
+      <h1>智算未来</h1>
+      <p>AI算力平台 · 数据驱动决策 · 智能应用落地</p>
+      <a href="cases.html" class="btn btn-primary">◆ 查看案例</a>
+    </div>
+  </div>
+  <div class="hero-dots">
+    <button class="active" aria-label="第1张"></button>
+    <button aria-label="第2张"></button>
+    <button aria-label="第3张"></button>
+  </div>
+</section>
+
+<!-- 核心算力服务 -->
+<section class="section">
+  <div class="section-container">
+    <div class="section-title reveal">
+      <p class="cn-label">核 心 算 力 服 务</p>
+      <h2>CORE POWER</h2>
+      <p>六大算力引擎，全方位助力企业数字化转型</p>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="card service-card reveal">
+        <div class="icon">📊</div>
+        <h3>战略咨询</h3>
+        <p>深入分析业务模式，制定算力驱动的数字化转型路线图</p>
+        <a href="service-detail.html?service=consulting" class="btn-sm">接入算力</a>
+      </div>
+      <div class="card service-card reveal">
+        <div class="icon">💻</div>
+        <h3>软件开发</h3>
+        <p>全栈定制开发，分布式算力驱动的企业级应用系统</p>
+        <a href="service-detail.html?service=software" class="btn-sm">接入算力</a>
+      </div>
+      <div class="card service-card reveal">
+        <div class="icon">☁️</div>
+        <h3>云计算服务</h3>
+        <p>云迁移、云原生、算力调度一站式弹性算力方案</p>
+        <a href="service-detail.html?service=cloud" class="btn-sm">接入算力</a>
+      </div>
+      <div class="card service-card reveal">
+        <div class="icon">📈</div>
+        <h3>数据分析</h3>
+        <p>AI算力驱动大数据分析，让数据成为核心资产</p>
+        <a href="service-detail.html?service=data" class="btn-sm">接入算力</a>
+      </div>
+      <div class="card service-card reveal">
+        <div class="icon">🔒</div>
+        <h3>网络安全</h3>
+        <p>全方位算力安全防护，为企业数字化保驾护航</p>
+        <a href="service-detail.html?service=security" class="btn-sm">接入算力</a>
+      </div>
+      <div class="card service-card reveal">
+        <div class="icon">🎨</div>
+        <h3>UI/UX 设计</h3>
+        <p>赛博时代的产品体验设计，打造卓越人机交互</p>
+        <a href="service-detail.html?service=design" class="btn-sm">接入算力</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最新动态 -->
+<section class="section" style="background: rgba(0,240,255,0.02);">
+  <div class="section-container">
+    <div class="section-title reveal">
+      <p class="cn-label">最 新 动 态</p>
+      <h2>LATEST NEWS</h2>
+      <p>了解新畑算力的最新资讯与行业洞察</p>
+      <div class="divider"></div>
+    </div>
+    <div class="news-grid">
+      <a href="news-detail.html?id=1" class="card news-card reveal">
+        <div class="news-img">⚡</div>
+        <div class="news-body">
+          <div class="news-date">2026-05-28 · 公司动态</div>
+          <h3>新畑算力荣获2026年度最佳算力服务商</h3>
+        </div>
+      </a>
+      <a href="news-detail.html?id=2" class="card news-card reveal">
+        <div class="news-img">🎯</div>
+        <div class="news-body">
+          <div class="news-date">2026-05-20 · 公司动态</div>
+          <h3>与南宁多所高校达成算力产学研合作协议</h3>
+        </div>
+      </a>
+      <a href="news-detail.html?id=3" class="card news-card reveal">
+        <div class="news-img">🚀</div>
+        <div class="news-body">
+          <div class="news-date">2026-05-15 · 技术分享</div>
+          <h3>新一代AI算力平台「新畑智算」正式上线</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 客户案例 -->
+<section class="section">
+  <div class="section-container">
+    <div class="section-title reveal">
+      <p class="cn-label">客 户 案 例</p>
+      <h2>CASE STUDIES</h2>
+      <p>用算力说话，以结果证明价值</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cases-grid">
+      <div class="card case-card reveal">
+        <div class="case-img">🏭</div>
+        <div class="case-body">
+          <h3>智慧工厂算力升级</h3>
+          <p class="case-client">某汽车零部件制造集团</p>
+          <blockquote>"新畑帮助我们完成产线算力部署，生产效率提升40%。"</blockquote>
+        </div>
+      </div>
+      <div class="card case-card reveal">
+        <div class="case-img">🏦</div>
+        <div class="case-body">
+          <h3>金融算力平台建设</h3>
+          <p class="case-client">某城市商业银行</p>
+          <blockquote>"分布式算力架构支撑千万级交易，系统零故障运行。"</blockquote>
+        </div>
+      </div>
+      <div class="card case-card reveal">
+        <div class="case-img">🏥</div>
+        <div class="case-body">
+          <h3>智慧医疗AI算力</h3>
+          <p class="case-client">某省级三甲医院</p>
+          <blockquote>"GPU算力集群让AI影像判读准确率提升至98.5%。"</blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>◆ 新畑算力科技</h4>
+      <p>算力驱动未来<br>XINTIAN POWER TECH</p>
+      <div class="social-links">
+        <a href="#" target="_blank">in</a>
+        <a href="#" target="_blank">⌂</a>
+        <a href="#">微</a>
+      </div>
+    </div>
+    <div>
+      <h4>快速链接</h4>
+      <p><a href="about.html">关于我们</a></p>
+      <p><a href="services.html">服务项目</a></p>
+      <p><a href="news.html">新闻动态</a></p>
+      <p><a href="cases.html">客户案例</a></p>
+    </div>
+    <div>
+      <h4>算力服务</h4>
+      <p><a href="service-detail.html?service=consulting">战略咨询</a></p>
+      <p><a href="service-detail.html?service=software">软件开发</a></p>
+      <p><a href="service-detail.html?service=cloud">云计算</a></p>
+      <p><a href="service-detail.html?service=data">数据分析</a></p>
+    </div>
+    <div>
+      <h4>联系我们</h4>
+      <p>📍 南宁市</p>
+      <p>📞 0771-xxxxxxx</p>
+      <p>📧 power@xintianpower.cn</p>
+      <p>🕐 7×24 算力在线</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 新畑算力科技 | 南宁理工学院 信息与电气工程学院 通信工程 | 黄新田 23090415 | 结课作业</p>
+  </div>
+</footer>
+
+<audio id="bgmAudio" loop preload="auto" style="display:none;"><source src="images/bgm.mp3" type="audio/mpeg"></audio>
+<div class="toolbar">
+  <button id="bgmToggle" title="背景音乐" style="font-size:0.9rem;">🔇</button>
+  <button id="backToTop" title="回到顶部">↑</button>
+  <button id="chatBtn" title="在线客服">◈</button>
+</div>
+<div class="chat-popup" id="chatPopup">
+  <div class="chat-header"><span>新畑算力 · 在线客服</span><button id="chatClose" style="background:none;border:none;color:var(--cyan);cursor:pointer;float:right;font-size:1.2rem;">✕</button></div>
+  <div class="chat-body"><p>◈ 新畑算力科技，请问有什么可以帮您？</p></div>
+  <div class="chat-input"><input type="text" id="chatInput" placeholder="输入..."><button id="chatSend">发送</button></div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
