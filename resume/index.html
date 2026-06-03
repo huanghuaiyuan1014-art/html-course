@@ -343,38 +343,42 @@
 </div>
 
 <script>
-// 头像上传
-const avatar = document.getElementById('avatar');
-const avatarInput = document.getElementById('avatarInput');
-const avatarDefault = document.getElementById('avatarDefault');
+document.addEventListener('DOMContentLoaded', function() {
+  var avatar = document.getElementById('avatar');
+  var avatarInput = document.getElementById('avatarInput');
+  var avatarDefault = document.getElementById('avatarDefault');
+  if (!avatar || !avatarInput) return;
 
-// 恢复已保存的头像
-const saved = localStorage.getItem('avatar_img');
-if (saved) {
-  avatarDefault.style.display = 'none';
-  const img = document.createElement('img');
-  img.src = saved;
-  img.alt = '头像';
-  avatar.appendChild(img);
-}
-
-avatar.addEventListener('click', () => avatarInput.click());
-avatarInput.addEventListener('change', (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = (ev) => {
-    // 移除旧图
-    const oldImg = avatar.querySelector('img');
-    if (oldImg) oldImg.remove();
+  // 恢复已保存的头像
+  var saved = localStorage.getItem('avatar_img');
+  if (saved && avatarDefault) {
     avatarDefault.style.display = 'none';
-    const img = document.createElement('img');
-    img.src = ev.target.result;
+    var img = document.createElement('img');
+    img.src = saved;
     img.alt = '头像';
     avatar.appendChild(img);
-    localStorage.setItem('avatar_img', ev.target.result);
-  };
-  reader.readAsDataURL(file);
+  }
+
+  avatar.addEventListener('click', function() {
+    avatarInput.click();
+  });
+
+  avatarInput.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      var oldImg = avatar.querySelector('img');
+      if (oldImg) oldImg.remove();
+      if (avatarDefault) avatarDefault.style.display = 'none';
+      var img = document.createElement('img');
+      img.src = ev.target.result;
+      img.alt = '头像';
+      avatar.appendChild(img);
+      localStorage.setItem('avatar_img', ev.target.result);
+    };
+    reader.readAsDataURL(file);
+  });
 });
 </script>
 </body>
