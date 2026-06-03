@@ -3,342 +3,340 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>黄新田 — 视觉设计师 个人简历</title>
+  <title>黄新田 — 视觉设计师</title>
   <style>
     :root {
-      --bg: #0f0f13;
-      --card: #18181f;
-      --text: #e8e8ed;
-      --muted: #9090a8;
-      --accent: #ff6a3d;
-      --accent2: #4da6ff;
-      --border: #2a2a38;
-      --radius: 14px;
+      --text: #2d2d2d;
+      --muted: #666;
+      --light: #999;
+      --accent: #2563eb;
+      --bg: #fafafa;
+      --white: #ffffff;
+      --border: #e8e8ec;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
-      background: var(--bg);
+      font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+      background: #f0f2f5;
       color: var(--text);
       line-height: 1.7;
-      padding: 40px 20px;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
+    .page {
+      max-width: 780px;
+      margin: 24px auto 40px;
+      background: var(--white);
+      padding: 48px 52px 40px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
 
-    /* Header */
+    /* ===== Header ===== */
     .header {
       display: flex;
       align-items: center;
-      gap: 28px;
-      margin-bottom: 40px;
-      padding: 36px;
-      background: var(--card);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
+      gap: 24px;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1.5px solid #e0e0e0;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      flex-shrink: 0;
     }
 
     .avatar {
-      width: 90px;
-      height: 90px;
+      width: 82px;
+      height: 82px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #ff8c5a);
+      background: #e8ecf2;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: white;
-      flex-shrink: 0;
+      font-size: 2rem;
       cursor: pointer;
-      position: relative;
       overflow: hidden;
-      transition: all 0.3s;
+      transition: box-shadow 0.2s;
+      border: 2px solid #e0e0e0;
     }
-    .avatar:hover { transform: scale(1.05); }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-    .avatar .edit-hint {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      font-size: 0.65rem;
+
+    .avatar:hover {
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+      border-color: var(--accent);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .avatar-tip {
       text-align: center;
-      padding: 4px 0;
-      opacity: 0;
-      transition: opacity 0.2s;
-      font-weight: 400;
+      font-size: 11px;
+      color: var(--light);
+      margin-top: 5px;
     }
-    .avatar:hover .edit-hint { opacity: 1; }
 
     .header-info h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 4px;
-    }
-
-    .header-info .title {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 26px;
+      font-weight: 700;
       letter-spacing: 1px;
+      margin-bottom: 2px;
     }
 
-    .header-info .school {
-      color: var(--muted);
-      font-size: 0.85rem;
+    .header-info .subtitle {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .header-info .meta {
+      font-size: 12px;
+      color: var(--light);
       margin-top: 2px;
     }
 
-    /* Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+    /* ===== Section ===== */
+    .section {
+      margin-bottom: 26px;
     }
 
-    .full { grid-column: 1 / -1; }
-
-    /* Cards */
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      padding: 28px;
-    }
-
-    .card h2 {
-      font-size: 1.1rem;
+    .section-title {
+      font-size: 15px;
       font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+      color: #1a1a1a;
+    }
+
+    /* ===== Portfolio ===== */
+    .links-row {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       gap: 10px;
     }
 
-    .card h2 .dot {
-      width: 10px;
-      height: 10px;
+    .link-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #f5f6f8;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .link-card:hover {
+      background: #e8ecf4;
+      color: var(--accent);
+    }
+
+    .link-card .dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       display: inline-block;
     }
 
-    .dot.orange { background: var(--accent); }
-    .dot.blue { background: var(--accent2); }
-    .dot.green { background: #4ce0b3; }
+    .dot.zcool { background: #f04e3e; }
+    .dot.huaban { background: #e83a6a; }
+    .dot.web { background: var(--accent); }
 
-    /* Portfolio */
-    .portfolio-link {
+    /* ===== Skills ===== */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+      font-size: 13px;
+    }
+
+    .skill-item {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 18px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 10px;
-      margin-bottom: 10px;
-      text-decoration: none;
-      color: var(--text);
-      border: 1px solid transparent;
-      transition: all 0.2s;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px dotted #e0e0e0;
     }
 
-    .portfolio-link:hover {
-      border-color: var(--border);
-      background: rgba(255,255,255,0.06);
-    }
+    .skill-item .label { font-weight: 500; }
+    .skill-item .level { color: var(--light); }
 
-    .portfolio-link .icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-
-    .icon.zcool { background: rgba(77,166,255,0.15); }
-    .icon.huaban { background: rgba(255,106,61,0.15); }
-    .icon.github { background: rgba(255,255,255,0.08); }
-
-    .portfolio-link strong { display: block; }
-    .portfolio-link span { font-size: 0.78rem; color: var(--muted); }
-
-    /* Skills */
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-tag {
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .tag-primary { background: rgba(255,106,61,0.12); color: var(--accent); }
-    .tag-secondary { background: rgba(77,166,255,0.12); color: var(--accent2); }
-    .tag-light { background: rgba(255,255,255,0.06); color: var(--muted); }
-
-    /* Experience */
+    /* ===== Experience ===== */
     .exp-item {
-      border-left: 2px solid var(--border);
-      padding: 0 0 20px 18px;
-      position: relative;
+      margin-bottom: 18px;
+      padding-left: 16px;
+      border-left: 2px solid #e0e0e0;
     }
 
-    .exp-item::before {
-      content: '';
-      position: absolute;
-      left: -5px;
-      top: 4px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .exp-item:last-child { padding-bottom: 0; }
+    .exp-item:last-child { margin-bottom: 0; }
 
     .exp-item h3 {
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
     }
 
-    .exp-item .meta {
-      color: var(--muted);
-      font-size: 0.8rem;
+    .exp-item .date {
+      font-size: 12px;
+      color: var(--light);
       margin-bottom: 6px;
     }
 
     .exp-item p {
+      font-size: 13px;
       color: var(--muted);
-      font-size: 0.88rem;
+      line-height: 1.6;
     }
 
-    /* Footer */
-    .footer {
-      text-align: center;
+    .exp-item ul {
+      padding-left: 18px;
+      font-size: 13px;
       color: var(--muted);
-      font-size: 0.75rem;
-      margin-top: 32px;
-      letter-spacing: 1px;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr; }
-      .header { flex-direction: column; text-align: center; }
-      .header-info h1 { font-size: 1.6rem; }
+    .exp-item ul li { margin-bottom: 3px; }
+
+    /* ===== Education ===== */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 14px;
     }
 
+    .edu-row .school { font-weight: 600; }
+    .edu-row .major { color: var(--muted); font-size: 13px; }
+    .edu-row .time { color: var(--light); font-size: 12px; }
+
+    /* ===== Self-eval ===== */
+    .self-eval p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ===== Print ===== */
     @media print {
-      body { background: white; color: #222; padding: 20px; }
-      .card { background: #fafafa; border-color: #e0e0e0; break-inside: avoid; }
-      .header { background: #f5f5f5; border-color: #e0e0e0; }
-      .skill-tag { border: 1px solid #ddd; }
-      .footer { display: none; }
+      body { background: white; }
+      .page { margin: 0; padding: 32px 40px; box-shadow: none; max-width: none; }
+      .avatar-tip { display: none; }
+      .section { break-inside: avoid; }
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 24px 20px; margin: 0; }
+      .header { flex-direction: column; text-align: center; }
+      .skill-grid { grid-template-columns: 1fr; }
+      .edu-row { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
+<div class="page">
 
   <!-- Header -->
   <div class="header">
-    <div class="avatar" id="avatar" title="点击更换头像">
-      <span id="avatarDefault">🖌</span>
-      <span class="edit-hint">换头像</span>
+    <div class="avatar-wrap">
+      <div class="avatar" id="avatar" title="点击上传照片">
+        <span id="avatarDefault">🖌</span>
+      </div>
+      <div class="avatar-tip">点击上传</div>
     </div>
     <input type="file" id="avatarInput" accept="image/*" style="display:none;">
     <div class="header-info">
       <h1>黄新田</h1>
-      <p class="title">视觉设计师 · Visual Designer</p>
-      <p class="school">南宁理工学院 · 信息与电气工程学院 · 通信工程 23090415</p>
+      <p class="subtitle">视觉设计师 · 4 年设计经验 · 可立即到岗</p>
+      <p class="meta">南宁理工学院 · 信息与电气工程学院 · 通信工程专业 · 2023 级</p>
     </div>
   </div>
 
-  <!-- Grid -->
-  <div class="grid">
-
-    <!-- 作品集 -->
-    <div class="card">
-      <h2><span class="dot orange"></span> 作品集 Portfolio</h2>
-      <a href="https://www.zcool.com.cn/u/28886448" target="_blank" class="portfolio-link">
-        <div class="icon zcool">🔥</div>
-        <div><strong>站酷 ZCOOL</strong><span>zcool.com.cn/u/28886448</span></div>
+  <!-- 作品集 -->
+  <div class="section">
+    <div class="section-title">作品集</div>
+    <div class="links-row">
+      <a href="https://www.zcool.com.cn/u/28886448" target="_blank" class="link-card">
+        <span class="dot zcool"></span> 站酷作品集
       </a>
-      <a href="https://huaban.com/space" target="_blank" class="portfolio-link">
-        <div class="icon huaban">🌸</div>
-        <div><strong>花瓣 Huaban</strong><span>huaban.com 个人主页</span></div>
+      <a href="https://huaban.com/space" target="_blank" class="link-card">
+        <span class="dot huaban"></span> 花瓣主页
       </a>
-      <a href="https://huanghuaiyuan1014-art.github.io/html-course" target="_blank" class="portfolio-link">
-        <div class="icon github">🌐</div>
-        <div><strong>网页设计作品</strong><span>赛博国风企业站（GitHub Pages）</span></div>
+      <a href="https://huanghuaiyuan1014-art.github.io/html-course" target="_blank" class="link-card">
+        <span class="dot web"></span> 网页设计作品
+      </a>
+      <a href="https://huanghuaiyuan1014-art.github.io/html-course/resume" target="_blank" class="link-card">
+        <span class="dot web"></span> 在线简历
       </a>
     </div>
-
-    <!-- 技能 -->
-    <div class="card">
-      <h2><span class="dot blue"></span> 技能矩阵 Skills</h2>
-      <div class="skill-tags">
-        <span class="skill-tag tag-primary">Adobe Illustrator</span>
-        <span class="skill-tag tag-primary">Photoshop</span>
-        <span class="skill-tag tag-secondary">CorelDRAW</span>
-        <span class="skill-tag tag-secondary">Premiere Pro</span>
-        <span class="skill-tag tag-primary">After Effects</span>
-        <span class="skill-tag tag-secondary">Figma</span>
-        <span class="skill-tag tag-light">UI/UX 设计</span>
-        <span class="skill-tag tag-light">品牌视觉</span>
-        <span class="skill-tag tag-light">海报设计</span>
-        <span class="skill-tag tag-light">视频剪辑</span>
-        <span class="skill-tag tag-light">动效设计</span>
-        <span class="skill-tag tag-light">HTML/CSS</span>
-      </div>
-    </div>
-
-    <!-- 项目经验 -->
-    <div class="card full">
-      <h2><span class="dot green"></span> 商业项目经验 Commercial Projects</h2>
-      <div class="exp-item">
-        <h3>线上商单视觉设计</h3>
-        <p class="meta">2024 — 至今 · 自由设计师</p>
-        <p>承接线上品牌视觉设计、电商海报、Logo 设计、视频剪辑等项目。熟练使用 AI / PS / CDR 完成从创意构思到交付的全流程，累计完成 10+ 商业订单，客户满意度高。</p>
-      </div>
-      <div class="exp-item">
-        <h3>赛博国风企业站设计</h3>
-        <p class="meta">2026 · 个人项目</p>
-        <p>独立完成「新畑算力科技」企业展示网站的视觉设计与前端开发。赛博朋克 × 国风融合风格，含 8 个页面、响应式布局、交互动效、BGM 播放列表。展示了完整的设计→开发交付能力。</p>
-      </div>
-      <div class="exp-item">
-        <h3>设计作品社区运营</h3>
-        <p class="meta">2022 — 至今</p>
-        <p>在花瓣网、站酷网持续发布视觉设计作品，积累个人作品集。涵盖品牌设计、海报、UI 界面等多个品类，持续学习行业前沿设计趋势。</p>
-      </div>
-    </div>
-
-    <!-- 教育 -->
-    <div class="card full">
-      <h2><span class="dot blue"></span> 教育背景 Education</h2>
-      <p><strong>南宁理工学院</strong> · 信息与电气工程学院 · 通信工程专业</p>
-      <p style="color: var(--muted); font-size: 0.85rem;">2023 年入学 · 大二开始自学视觉设计 · AI/PS/CDR 全链路掌握</p>
-    </div>
-
   </div>
 
-  <p class="footer">黄新田 · 视觉设计师 · 作品集: zcool.com.cn/u/28886448</p>
+  <!-- 技能 -->
+  <div class="section">
+    <div class="section-title">专业技能</div>
+    <div class="skill-grid">
+      <div class="skill-item"><span class="label">Adobe Illustrator</span><span class="level">精通</span></div>
+      <div class="skill-item"><span class="label">Adobe Photoshop</span><span class="level">精通</span></div>
+      <div class="skill-item"><span class="label">Adobe After Effects</span><span class="level">熟练</span></div>
+      <div class="skill-item"><span class="label">Adobe Premiere Pro</span><span class="level">熟练</span></div>
+      <div class="skill-item"><span class="label">CorelDRAW</span><span class="level">熟练</span></div>
+      <div class="skill-item"><span class="label">Figma</span><span class="level">熟练</span></div>
+      <div class="skill-item"><span class="label">品牌视觉设计</span><span class="level">精通</span></div>
+      <div class="skill-item"><span class="label">海报/画册设计</span><span class="level">精通</span></div>
+      <div class="skill-item"><span class="label">视频剪辑与动效</span><span class="level">熟练</span></div>
+      <div class="skill-item"><span class="label">HTML / CSS</span><span class="level">掌握</span></div>
+    </div>
+  </div>
+
+  <!-- 项目经验 -->
+  <div class="section">
+    <div class="section-title">商业项目经验</div>
+
+    <div class="exp-item">
+      <h3>自由设计师 · 线上商单</h3>
+      <p class="date">2022 年 — 至今</p>
+      <p>承接品牌视觉设计、电商海报、Logo 设计、视频剪辑等商业订单，累计完成 10+ 项目。</p>
+    </div>
+
+    <div class="exp-item">
+      <h3>企业展示网站 · 独立开发</h3>
+      <p class="date">2026 年</p>
+      <p>独立完成「新畑算力科技」企业网站全流程设计与前端开发，含 8 个页面、响应式布局、交互动效。展示从视觉设计到代码落地的完整能力。</p>
+    </div>
+
+    <div class="exp-item">
+      <h3>设计作品社区运营</h3>
+      <p class="date">2022 年 — 至今</p>
+      <p>在花瓣网、站酷网持续发布视觉设计作品，涵盖品牌设计、海报、UI 界面等多个品类。</p>
+    </div>
+  </div>
+
+  <!-- 教育 -->
+  <div class="section">
+    <div class="section-title">教育背景</div>
+    <div class="edu-row">
+      <span class="school">南宁理工学院</span>
+      <span class="major">信息与电气工程学院 · 通信工程专业</span>
+      <span class="time">2023 年入学</span>
+    </div>
+  </div>
+
+  <!-- 自我评价 -->
+  <div class="section">
+    <div class="section-title">自我评价</div>
+    <div class="self-eval">
+      <p>热爱视觉设计，具备扎实的 AI / PS / CDR 实操能力和商业项目经验。善于从用户角度出发进行设计思考，注重视觉传达的准确性与美感。自学能力强，持续关注设计趋势，在花瓣、站酷等平台保持作品更新。希望从事视觉设计相关工作，用设计创造价值。</p>
+    </div>
+  </div>
 
 </div>
 
@@ -349,7 +347,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var avatarDefault = document.getElementById('avatarDefault');
   if (!avatar || !avatarInput) return;
 
-  // 恢复已保存的头像
   var saved = localStorage.getItem('avatar_img');
   if (saved && avatarDefault) {
     avatarDefault.style.display = 'none';
@@ -381,5 +378,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
 </body>
 </html>
